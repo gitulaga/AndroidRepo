@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <TextView
+        android:id="@+id/user_password_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/view_bg_design"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="25sp"
+        />
+
+    <Button
+        android:id="@+id/btn_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/user_password_hint"
+        android:layout_toLeftOf="@id/my_button_2"
+        android:text="1" />
+
+    <Button
+        android:id="@+id/my_button_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/user_password_hint"
+        android:layout_centerHorizontal="true"
+        android:text="2"
+        />
+
+    <Button
+        android:id="@+id/btn_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/user_password_hint"
+        android:layout_toRightOf="@id/my_button_2"
+        android:text="3" />
+
+    <Button
+        android:id="@+id/btn_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_1"
+        android:layout_toLeftOf="@id/btn_5"
+        android:text="4" />
+
+    <Button
+        android:id="@+id/btn_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/my_button_2"
+        android:layout_centerHorizontal="true"
+        android:text="5" />
+
+    <Button
+        android:id="@+id/btn_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_3"
+        android:layout_toRightOf="@id/btn_5"
+        android:text="6" />
+
+    <Button
+        android:id="@+id/submit_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_5"
+        android:layout_centerHorizontal="true"
+        android:text="ok" />
+
+    <Button
+        android:id="@+id/clear_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_5"
+        android:layout_centerHorizontal="true"
+        android:layout_toRightOf="@id/submit_btn"
+        android:text="Clear" />
+
+    <!--<EditText-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_below="@id/submit_btn"-->
+    <!--android:background="@drawable/view_bg_design"-->
+    <!--android:hint="Enter your new password"-->
+    <!--android:id="@+id/user_password"-->
+    <!--android:inputType="textPassword"-->
+    <!--android:layout_marginLeft="15dp"-->
+    <!--android:layout_marginRight="15dp"-->
+    <!--android:layout_marginTop="25dp"-->
+    <!--android:padding="10dp"-->
+    <!--/>-->
+
+    <Button
+        android:id="@+id/save_pass_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="New PIN"
+        />
+</RelativeLayout>

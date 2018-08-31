@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/view_bg_design"
+        android:hint="Enter your password"
+        android:id="@+id/edituserpassword"
+        android:layout_centerInParent="true"
+        android:inputType="number"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:layout_marginTop="14dp"
+        android:padding="10dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save PIN"
+        android:id="@+id/btnsavepassword"
+        android:layout_below="@id/edituserpassword"
+        android:layout_centerHorizontal="true"
+       />
+
+
+
+</RelativeLayout>
