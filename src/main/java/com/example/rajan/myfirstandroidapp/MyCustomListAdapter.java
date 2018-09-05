@@ -17,25 +17,28 @@ import java.util.Map;
 import java.util.Set;
 
 public class MyCustomListAdapter extends BaseAdapter {
-Context context;
-    ArrayList<Map<String,Object>>  tasktitlearr;
+    //ArrayList<Map<String,Object>>  tasktitlearr;
+    ArrayList<HashMap>  datalist;
 LayoutInflater inflter;
-    TextView txttasktitle,txttaskdetails;
-    public MyCustomListAdapter(Context applicationcontext,DataSource sourcedata){
+//int position;
+Context context;
+    //TextView txttasktitle,txttaskdetails;
+    public MyCustomListAdapter(Context ctx,DataSource sourcedata){
      //   sourcedata=new DataSource(applicationcontext);
-tasktitlearr=sourcedata.getData();
-inflter=(LayoutInflater.from(applicationcontext));
+    datalist=sourcedata.getData();
+    context=ctx;
+//inflter=(LayoutInflater.from(applicationcontext));
     }
 
 
     @Override
     public int getCount() {
-        return tasktitlearr.size();
+        return datalist.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return null;
+        return datalist.get(i);
     }
 
     @Override
@@ -45,7 +48,8 @@ inflter=(LayoutInflater.from(applicationcontext));
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        view=inflter.inflate(R.layout.mylistcustomadapter,null);
+      //  view=inflter.inflate(R.layout.mylistcustomadapter,null);
+        View root=LayoutInflater.from(context).inflate(R.layout.mylistcustomadapter,null);
 
     //    ArrayList<Map<String,Object>> taskitems=tasktitlearr.get(i);
 
@@ -55,7 +59,22 @@ inflter=(LayoutInflater.from(applicationcontext));
 
        int listcnt= this.getCount();
         Log.i("listcount", String.valueOf(listcnt));
-        for (Map<String, Object> map : tasktitlearr)
+        //while(position<listcnt)
+      //  for(int position=0;position<listcnt;position++) {
+            HashMap<String, String> data = datalist.get(i);
+
+            String tasktitle = data.get("task_title");
+            String taskdesc = data.get("task_details");
+            TextView txttasktitle = root.findViewById(R.id.tasktitle);
+            Log.i("tasktitle", tasktitle);
+            txttasktitle.setText(tasktitle);
+
+            TextView txttaskdetails = root.findViewById(R.id.taskdetails);
+            txttaskdetails.setText(taskdesc);//Returns the list of values
+            Log.i("taskdesc", taskdesc);
+      //  }
+        //}while(position<listcnt);
+      /*  for (Map<String, Object> map : tasktitlearr)
         {
             Log.i("tasktitlearr", String.valueOf(tasktitlearr));
             for (Map.Entry<String, Object> entry : map.entrySet()) {
@@ -77,10 +96,10 @@ inflter=(LayoutInflater.from(applicationcontext));
                 }
             }
 
-        }
+        }*/
        //    Map<String, Object> map = new HashMap<String,Object>();
 
         //txttasktitle.setText(tasktitlearr.get(i).toString());
-        return view;
+        return root;
     }
 }
